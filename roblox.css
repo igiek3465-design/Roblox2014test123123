@@ -1,0 +1,115 @@
+*{box-sizing:content-box}
+html{background:#123f83}
+body{margin:0;background:#123f83;color:#343434;font:14px/1.3 'Source Sans Pro','Segoe UI',Helvetica,Arial,sans-serif}
+a{color:#0055b3;text-decoration:none;cursor:pointer}
+button{font-family:inherit;cursor:pointer}
+p{margin:0}
+
+/* ---------- header ---------- */
+.site-header{height:33px;border-bottom:1px solid #0a2246;background:linear-gradient(#1951a5,#123f83);position:relative;z-index:20}
+#navigation-container{width:970px;height:33px;margin:0 auto;position:relative}
+.btn-logo{position:absolute;left:8px;top:3px;width:107px;height:27px}
+.btn-logo svg{display:block}
+#navigation-menu{position:absolute;left:122px;top:0}
+#navigation-menu ul{list-style:none;margin:0;padding:0;display:flex}
+#navigation-menu li{position:relative}
+#navigation-menu li>a,#nav-more{display:block;padding:0 7.5px;line-height:33px;color:#fff;font-weight:600;font-size:15px;text-shadow:0 1px 1px rgba(0,0,0,.25)}
+#nav-more .arrow{font-size:9px;margin-left:3px}
+.dropdown{display:none;position:absolute;left:0;top:33px;min-width:110px;background:#fff;border:1px solid #b5b5b5;box-shadow:0 2px 4px rgba(0,0,0,.3);z-index:30}
+.dropdown a{display:block;padding:6px 12px;color:#343434;font-size:14px}
+.dropdown a:hover{background:#e8f0fb}
+.open>.dropdown{display:block}
+#header-login-container{position:absolute;right:-2px;top:3px;height:26px;display:flex;align-items:center}
+#header-signup{color:#fff;font-weight:600;font-size:15px;text-shadow:0 1px 1px rgba(0,0,0,.25)}
+#header-or{margin:0 10px;color:#9eacc7;font-size:14px}
+#login-span{position:relative}
+#header-login{display:block;box-sizing:border-box;width:77px;height:26px;padding:0;border:1px solid #777;border-radius:2px;background:linear-gradient(#fff,#e2e2e2);color:#000;font-size:14px;font-weight:600;line-height:24px}
+#header-login .grey-arrow{color:#777;font-size:11px}
+#iFrameLogin{display:none;position:absolute;right:0;top:30px;width:210px;padding:12px;background:#fff;border:1px solid #b5b5b5;box-shadow:0 2px 4px rgba(0,0,0,.3)}
+#login-span.open #iFrameLogin{display:block}
+#iFrameLogin label{display:block;margin:0 0 3px;color:#343434;font-size:13px;font-weight:600}
+#iFrameLogin input{box-sizing:border-box;width:100%;margin-bottom:9px}
+
+/* ---------- body ---------- */
+#BodyWrapper{background:#fff;min-height:581px}
+#Body{width:970px;margin:0 auto;padding-top:21px}
+h1{margin:0 0 18px;padding-left:14px;font-size:30px;line-height:36px;font-weight:700;color:#343434}
+h2{margin:0;font-weight:300;color:#343434}
+#loginarea{padding-bottom:18px;border-bottom:1px solid #ccc;overflow:hidden}
+#leftArea{position:relative;float:left;width:487px;height:252px;border-right:1px solid #ccc}
+#rightArea{float:left;width:444px;padding-left:38px}
+.text-box{height:21px;padding:0 3px;border:1px solid #a7a7a7;background:#fff;color:#343434;font:14px 'Source Sans Pro','Segoe UI',Arial,sans-serif;outline:0}
+.text-box-medium{width:241px}
+.text-box:focus{border-color:#0055b3}
+#logintable{margin:4px 0 0 17px;border-spacing:0}
+#logintable td{height:23px;padding:0 0 24px}
+#logintable tr:last-child td{padding-bottom:0}
+.form-label{display:block;padding-right:7px;text-align:right;font-size:13px;font-weight:600;color:#343434}
+#loginError{position:absolute;left:98px;top:77px;color:#c00;font-size:12px}
+#signInRow{position:relative;height:35px;margin-top:21px}
+#forgotPasswordPanel{position:absolute;left:22px;top:13px;font-size:12px}
+#signInButtonPanel{position:absolute;left:261px;top:0}
+.btn-medium{display:block;border:0;border-radius:0;color:#fff;font-size:20px;font-weight:400;line-height:35px;height:35px;padding:0;text-align:center}
+.btn-neutral{background:linear-gradient(#0e6ef6,#0953b8)}
+.btn-neutral:hover{background:linear-gradient(#2a82ff,#0a5ccb)}
+.btn-primary{background:linear-gradient(#00ab00,#007400)}
+.btn-primary:hover{background:linear-gradient(#10c010,#008500)}
+#signInButtonPanel .btn-medium{width:91px}
+.fbSplashPageConnect{margin:40px 0 0 115px}
+.facebook-login{display:flex;width:141px;height:23px;border:1px solid #3e5a92;border-radius:3px;background:linear-gradient(#637cae,#45629d);color:#fff}
+.facebook-login .left{width:24px;border-right:1px solid #3c5488;box-shadow:1px 0 0 #6f87b6;display:flex;align-items:center;justify-content:center}
+.facebook-login .middle{flex:1;text-align:center;font-size:12px;font-weight:600;line-height:23px;text-shadow:1px 1px 0 #2f4a80}
+#signUpPanel{box-sizing:content-box;width:407px;height:215px;padding-top:17px;border:1px solid #bcbcbc;background:#e1e1e1;text-align:center}
+#signUpPanel .text{font-size:12px;line-height:14px}
+#signUpPanel h2{margin-top:14px;font-size:26px;line-height:30px;white-space:nowrap}
+#signUpPanel .text.bd{margin-top:22px}
+.bd-selects{display:flex;justify-content:center;gap:12px;margin-top:11px}
+.form-select{height:21px;margin:0;padding:0 1px;border:1px solid #a7a7a7;background:#fff;color:#343434;font:12px Arial,sans-serif}
+#MonthSelect{width:79px}#DaySelect{width:45px}#YearSelect{width:49px}
+.footnote{margin-top:10px;font-size:10px;line-height:12px;color:#7a6a62}
+#btnSignUp{width:93px;margin:20px auto 0;font-size:20px}
+#guestarea{padding:25px 0 0 2px}
+#guestarea h2{font-size:28px;line-height:34px}
+#guestarea .text{margin-top:18px;line-height:22px}
+.btn-small{display:inline-block;vertical-align:middle;height:22px;padding:0 6px;margin-left:1px;color:#fff;font-size:13px;line-height:22px}
+
+/* ---------- footer ---------- */
+#Footer{padding:26px 0 60px;text-align:center;color:#fff;background:#123f83}
+.FooterNav{font-size:12px;font-weight:600;line-height:16px;color:#fff}
+.FooterNav a,.SEOGenreLinks a{color:#fff}
+.FooterNav .sep{margin:0 3px}
+.LanguageTrigger{position:relative;cursor:pointer}
+.FooterArrow{font-size:11px}
+.dropuplanguagecontainer{display:none;position:absolute;left:0;bottom:20px;padding:4px 8px;background:#fff;border:1px solid #999;white-space:nowrap;text-align:left;z-index:30}
+.dropuplanguagecontainer a{color:#343434}
+.LanguageTrigger.open .dropuplanguagecontainer{display:block}
+.SEOGenreLinks{margin-top:15px;font-size:11px;font-weight:600;line-height:14px}
+.SEOGenreLinks span{margin:0 2px}
+.legal{display:flex;align-items:flex-start;width:900px;margin:22px auto 0;padding-top:22px;border-top:1px solid #355c95;text-align:left}
+.legal .left{margin-left:5px;width:133px;flex:none}
+.legal .left svg{display:block}
+.Legalese{margin-left:10px;font-size:11px;line-height:17px;font-weight:400;color:#8ba3cc}
+.Legalese a{color:#fff;font-weight:700}
+
+.hdr-link{color:#fff;font-weight:600;font-size:15px;text-shadow:0 1px 1px rgba(0,0,0,.25)}
+.pg .box{margin:0 0 18px;padding:14px 18px;border:1px solid #bcbcbc;background:#e1e1e1}
+.pg h2{font-size:24px;line-height:30px;margin:6px 0 10px}
+.pg p{margin:0 0 12px;line-height:1.45}
+.pg table{width:100%;border-collapse:collapse;margin-bottom:18px}
+.pg th{text-align:left;background:#e1e1e1}
+.pg th,.pg td{padding:7px 10px;border-bottom:1px solid #ddd}
+.pg .grid{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px}
+.pg .card{width:150px;padding:10px;border:1px solid #bcbcbc;text-align:center}
+.pg .card i{display:block;height:100px;margin-bottom:8px;background:linear-gradient(#cfd8e6,#9fb2cf)}
+.pg label{display:block;margin:10px 0 3px;font-weight:600;font-size:13px}
+.pg input.text-box,.pg textarea{box-sizing:border-box;width:320px}
+.pg textarea{height:120px;padding:4px;border:1px solid #a7a7a7;font:14px 'Source Sans Pro',Arial,sans-serif}
+.pg .err{color:#c00;margin-bottom:10px}
+.pg button.btn-medium{width:93px;margin-top:14px}
+.sep2{margin:0 10px;color:#9eacc7;font-size:14px}
+.announce{background:#fff7c2;border-bottom:1px solid #d9c96b;text-align:center;padding:7px 10px;color:#333;font-weight:600}
+.pg .card img{display:block;margin:0 auto 8px}
+.pg .card form{margin:6px 0 0}
+.btn-small{border:0;cursor:pointer}
+.lim{display:inline-block;background:#0b63d1;color:#fff;font-size:11px;font-weight:700;padding:1px 5px;border-radius:2px}
+.limu{background:#c58a00}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{% block title %}ROBLOX.com{% endblock %}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700">
+<link rel="stylesheet" href="/static/css/roblox.css"></head><body>
+<div class="site-header">
+  <div id="navigation-container">
+    <a href="/" class="btn-logo" aria-label="ROBLOX">
+      <svg width="107" height="27" viewBox="80 18 860 215" aria-hidden="true">
+        <defs><g id="lg" fill-rule="evenodd">
+          <path d="M95 72L212 52L240 76L238 126L206 150L246 206L192 226L150 166L132 170L126 216L88 206ZM137 88L198 80L203 120L140 126Z"/>
+          <path d="M255 92L372 86L386 186L266 196ZM292 118L344 113L349 160L297 165Z"/>
+          <path d="M268 34L352 30L356 50L271 54Z"/>
+          <path d="M396 82L506 72L526 100L520 126L500 140L521 160L516 194L402 206ZM432 98L474 94L472 118L433 121ZM433 152L478 149L476 175L435 178Z"/>
+          <path d="M541 46L590 34L596 148L646 144L641 196L536 201Z"/>
+          <path d="M626 102L726 72L746 170L652 196ZM668 108L706 100L716 150L674 158Z"/>
+          <path d="M766 76L832 66L852 102L892 56L926 72L882 126L930 186L895 216L846 166L800 216L755 196L810 136Z"/>
+        </g></defs>
+        <use href="#lg" fill="#d6141c" stroke="#d6141c" stroke-width="22" stroke-linejoin="round"/>
+        <use href="#lg" fill="#fff"/>
+      </svg>
+    </a>
+    <div id="navigation-menu">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/games">Games</a></li>
+        <li><a href="/catalog">Catalog</a></li>
+        <li><a href="/leaderboards">Leaderboards</a></li>
+        <li><a href="/upgrades">Upgrade</a></li>
+        <li><a href="/forum">Forum</a></li>
+        <li class="more-list-item" id="moreItem">
+          <a id="nav-more" role="button" tabindex="0">More<span class="arrow">▼</span></a>
+          <div class="dropdown">
+            <a href="/people">People</a>
+            <a href="/blog">Blog</a>
+            <a href="/help">Help</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="header-login-container">
+{% if user %}<a class="hdr-link" href="/home">{{ user.username }}</a><span class="sep2">|</span><a class="hdr-link" href="/home">R$ {{ user.robux }}</a><span class="sep2">|</span><a class="hdr-link" href="/logout">Logout</a>
+{% else %}
+      <a id="header-signup" href="/Login/NewAge.aspx">Sign Up</a>
+      <span id="header-or">or</span>
+      <span id="login-span">
+        <button type="button" id="header-login">Login <span class="grey-arrow">▼</span></button>
+        <form id="iFrameLogin" action="/newlogin" method="post">
+          <label for="hdrUser">Username:</label><input class="text-box" id="hdrUser" name="Username" type="text" autocomplete="username">
+          <label for="hdrPass">Password:</label><input class="text-box" id="hdrPass" name="Password" type="password" autocomplete="current-password">
+          <button type="submit" id="hdrGo" class="btn-medium btn-neutral" style="width:100%;font-size:16px;height:30px;line-height:30px">Login</button>
+        </form>
+      </span>
+{% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% if announcement %}<div class="announce">{{ announcement }}</div>{% endif %}
+{% block body %}{% endblock %}
+<div id="Footer">
+  <div class="FooterNav">
+    <a href="/info/privacy">Privacy Policy</a><span class="sep">|</span>
+    <a href="/info/advertise">Advertise with Us</a><span class="sep">|</span>
+    <a href="/info/press">Press</a><span class="sep">|</span>
+    <a href="/info/contact">Contact Us</a><span class="sep">|</span>
+    <a href="/info/about">About Us</a><span class="sep">|</span>
+    <a href="/blog">Blog</a><span class="sep">|</span>
+    <a href="/info/jobs">Jobs</a><span class="sep">|</span>
+    <a href="/info/parents">Parents</a><span class="sep">|</span>
+    <span class="LanguageTrigger" id="langTrigger">English <span class="FooterArrow">▼</span>
+      <span class="dropuplanguagecontainer"><a href="#">Deutsch (German)</a></span>
+    </span>
+  </div>
+  <div class="SEOGenreLinks">
+    <a href="/games">All Games</a><span>|</span><a href="/genre/building">Building</a><span>|</span><a href="/genre/horror">Horror</a><span>|</span><a href="/genre/town-and-city">Town and City</a><span>|</span><a href="/genre/military">Military</a><span>|</span><a href="/genre/comedy">Comedy</a><span>|</span><a href="/genre/medieval">Medieval</a><span>|</span><a href="/genre/adventure">Adventure</a><span>|</span><a href="/genre/sci-fi">Sci-Fi</a><span>|</span><a href="/genre/naval">Naval</a><span>|</span><a href="/genre/fps">FPS</a><span>|</span><a href="/genre/rpg">RPG</a><span>|</span><a href="/genre/sports">Sports</a><span>|</span><a href="/genre/fighting">Fighting</a><span>|</span><a href="/genre/western">Western</a>
+  </div>
+  <div class="legal">
+    <div class="left">
+      <svg width="133" height="45" viewBox="0 0 133 45" role="img" aria-label="TRUSTe Kids Privacy">
+        <rect width="133" height="45" rx="5" fill="#fff"/>
+        <path d="M4 4H47V22Q47 27 40 29H12Q4 28 4 22Z" fill="#8cc63f"/>
+        <circle cx="26" cy="26" r="15" fill="#fff"/>
+        <path d="M17 25.500H35A9.500 9.500 0 1 0 31.500 33" fill="none" stroke="#111" stroke-width="4"/>
+        <text x="52" y="23" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="17" fill="#111" textLength="63" lengthAdjust="spacingAndGlyphs">TRUSTe</text>
+        <path d="M122 12.500L128.500 16L122 19.500Z" fill="#222"/>
+        <text x="52" y="34" font-family="Arial,sans-serif" font-size="9.500" fill="#333" textLength="62">Kids Privacy</text>
+      </svg>
+    </div>
+    <p class="Legalese">ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of <a href="/info/about">ROBLOX Corporation</a>, ©2014. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the <a href="/info/terms">Terms and Conditions</a>.</p>
+  </div>
+</div>
+
+
+{% block scripts %}<script src="/static/js/common.js"></script>{% endblock %}
+<script src="/static/js/rbx3d.js"></script>
+</body></html>

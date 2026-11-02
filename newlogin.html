@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block body %}<div id="BodyWrapper">
+  <div id="Body">
+    <h1>Login to ROBLOX</h1>
+    <form action="/newlogin" id="loginForm" method="post">
+      <div id="loginarea">
+        <div id="leftArea">
+          <table id="logintable">
+            <tr><td><label class="form-label" for="Username">Username:</label></td>
+                <td><input class="text-box text-box-medium" id="Username" name="Username" type="text" value="{{ username or '' }}" autocomplete="username"></td></tr>
+            <tr><td><label class="form-label" for="Password">Password:</label></td>
+                <td><input class="text-box text-box-medium" id="Password" name="Password" type="password" autocomplete="current-password"></td></tr>
+          </table>
+          <div id="loginError" role="alert">{{ error or "" }}</div>
+          <div id="signInRow">
+            <div id="forgotPasswordPanel"><a href="/forgot">Forgot your password?</a></div>
+            <div id="signInButtonPanel"><button type="button" id="btnSignIn" class="btn-medium btn-neutral">Sign In</button></div>
+          </div>
+          <div class="fbSplashPageConnect">
+            <a class="facebook-login" href="/facebook">
+              <span class="left"><svg width="10" height="17" viewBox="0 0 10 18"><path d="M6.500 18V10h2.700l.4-3.200H6.500V4.900c0-.9.300-1.500 1.600-1.500H9.700V.5C9.400.5 8.400.4 7.300.4 4.900.4 3.300 1.900 3.300 4.500v2.300H.6V10h2.700v8z" fill="#fff"/></svg></span>
+              <span class="middle">Login with Facebook</span>
+            </a>
+          </div>
+        </div>
+        <div id="rightArea">
+          <div id="signUpPanel">
+            <p class="text">Not a member?</p>
+            <h2>Sign Up to Build &amp; Make Friends</h2>
+            <p class="text bd">What is your birthday?</p>
+            <div class="bd-selects">
+              <select id="MonthSelect" class="form-select" name="Month"><option value="">Month</option></select>
+              <select id="DaySelect" class="form-select" name="Day"><option value="">Day</option></select>
+              <select id="YearSelect" class="form-select" name="Year"><option value="">Year</option></select>
+            </div>
+            <p class="footnote" id="disclaimer">Your birthday will not be given out to any third party!</p>
+            <button type="button" id="btnSignUp" class="btn-medium btn-primary">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <input id="ReturnUrl" name="ReturnUrl" type="hidden" value="{{ next or '' }}">
+    </form>
+
+    <div id="guestarea">
+      <h2>You don't need an account to play ROBLOX</h2>
+      <p class="text">You can start playing right now, in guest mode! <a href="/games" class="btn-small btn-neutral">Play as Guest</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}<script src="/static/js/newlogin.js"></script>{% endblock %}
